@@ -18,7 +18,7 @@ app.get('/alumnos', (req, res) => {
 app.get('/alumnos/:id', (req, res) => {
     const alumno = alumnos.find(c => c.id == parseInt(req.params.id));
     if (!alumno) return res.status(404);
-    else res.status(200).send(alumno);
+    else return res.status(200).send(alumno);
 });
 
 
@@ -43,7 +43,7 @@ app.post('/alumnos', (req, res) => {
     };
 
     alumnos.push(alumno);
-    res.status(201);
+    res.send(alumno);
 });
 
 
@@ -71,7 +71,7 @@ app.put('/alumnos/:id', (req, res) => {
     };
 
     alumnos.push(alumno);
-    res.status(200);
+    res.status(200).send(alumno);
 
 
 });
@@ -123,7 +123,7 @@ app.post('/profesores', (req, res) => {
     };
 
     profesores.push(profesor);
-    res.status(201);
+    res.send(profesor);
 });
 
 
@@ -154,7 +154,7 @@ app.put('/profesores/:id', (req, res) => {
     };
 
     profesores.push(profesor);
-    res.status(200);
+    res.status(200).send(profesor);
 
 });
 
