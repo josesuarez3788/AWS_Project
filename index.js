@@ -11,8 +11,7 @@ const profesores = [];
 //creación de endpoints de alumnos
 
 app.get('/alumnos', (req, res) => {
-    if(alumnos.length == 0) return res.status(404).send('JSON vacio');
-    else res.status(200).send(alumnos);
+    return res.status(200).send(alumnos);
 });
 
 
@@ -108,7 +107,7 @@ app.put('/alumnos/:id', (req, res) => {
     };
 
     alumnos.push(alumno);
-    res.status(201).send('Alumno actualizado');
+    res.status(200).send('Alumno actualizado');
 
 
 });
@@ -120,15 +119,14 @@ app.delete('/alumnos/:id', (req, res) => {
 
     const index = alumnos.indexOf(alumno);
     alumnos.splice(index, 1);
-    res.sendStatus(201);
+    res.sendStatus(200);
 });
 
 
 //creación de endpoints de profesores
 
 app.get('/profesores', (req, res) => {
-    if(profesores.length == 0) return res.status(404).send('JSON vacio');
-    else res.status(200).send(profesores);
+    return res.status(200).send(profesores);
 });
 
 app.get('/profesores/:id', (req, res) => {
@@ -222,7 +220,7 @@ app.put('/profesores/:id', (req, res) => {
     };
 
     profesores.push(profesor);
-    res.status(201).send('Profesor actualizado');
+    res.status(200).send('Profesor actualizado');
 
 });
 
@@ -233,7 +231,7 @@ app.delete('/profesores/:id', (req, res) => {
 
     const index = profesores.indexOf(profesor);
     profesores.splice(index, 1);
-    res.sendStatus(201);
+    res.sendStatus(200);
 });
 
 
@@ -241,5 +239,5 @@ app.delete('/profesores/:id', (req, res) => {
 
 
 //Configuración del puerto
-const port = process.env.port || 80;
+const port = 8080;
 app.listen(port , () => console.log(`Escuchando en puerto ${port}...`));
