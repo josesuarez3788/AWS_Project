@@ -1,0 +1,4 @@
+Comandos para generar los modelos y las migraciones
+
+npx sequelize-cli model:generate --name Alumno --attributes nombres:string,apellidos:string,matricula:string,promedio:float,fotoPerfilUrl:string
+npx sequelize-cli model:generate --name Profesor --attributes nombres:string,apellidos:string,numeroEmpleado:integer,horasClase:integer
