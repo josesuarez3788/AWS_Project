@@ -3,10 +3,10 @@ require('dotenv').config();
 module.exports = {
   development: {
     dialect: 'postgres',
-    database: 'escuela_development',
+    database: 'escuelaAWS',
     username: 'postgres',
-    password: 'Cefa3591',
-    host: 'proyectoescuela.csqhrgc6bdsq.us-east-1.rds.amazonaws.com',
+    password: 'postgres',
+    host: 'escuela-aws.c3lh3hybon13.us-east-1.rds.amazonaws.com',
     port: 5432
   },
   production: {
